@@ -78,6 +78,7 @@ async function init(){
   engine.addEntity(baseScene)
   engine.removeEntity(tempLoadNow)
 
+    /*
   for( const p in CONFIG.signs){
     const signData = CONFIG.signs[p]
 
@@ -95,7 +96,7 @@ async function init(){
       createModel( baseScene, model )
     }
   }
-
+  */
 }
 
 //due to red box appearing on load and fear it wont render in scene going to defer till engine started

@@ -1,6 +1,6 @@
 import { SignData } from "./types"
 
-const ParcelCountX:number = 20
+const ParcelCountX:number = 16
 const ParcelCountZ:number = 20
  
 const signArr:SignData[] = [ 
@@ -54,8 +54,10 @@ export class Config{
     this.sizeX = ParcelCountX*16
     this.sizeZ = ParcelCountZ*16 
     this.sizeY = (Math.log((ParcelCountX*ParcelCountZ) + 1) * Math.LOG2E) * 20// log2(n+1) x 20 //Math.log2( ParcelScale + 1 ) * 20
-    this.center = new Vector3(this.sizeX/2,this.sizeY/2,this.sizeZ/2)
-    this.centerGround = new Vector3(this.sizeX/2,0,this.sizeZ/2)
+
+      //OFFSET BY 4 * 16 / 2, BASE COORDINATE OFFSET BY 4 PARCEL
+    this.center = new Vector3(this.sizeX/2 - 4 * 16 / 2,this.sizeY/2,this.sizeZ/2)
+    this.centerGround = new Vector3(this.sizeX/2 - 4 * 16 / 2,0,this.sizeZ/2)
     
   }
 }
